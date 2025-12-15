@@ -29,14 +29,14 @@ const CurrencyInputBlock = ({
                 {label}
             </label>
 
-            <div className="flex justify-between items-center relative">
+            <div className="flex justify-between items-center relative space-x-3">
                 <NumericFormat
                     value={amount}
                     thousandSeparator=","
                     allowNegative={false}
                     decimalScale={2}
                     fixedDecimalScale
-                    className="outline-none text-2xl font-semibold text-gray-800 bg-transparent"
+                    className="outline-none text-2xl font-semibold text-gray-800 bg-transparent flex-1 min-w-0"
                     onValueChange={(values) => {
                         onAmountChange(values.floatValue ?? 0);
                     }}
@@ -45,7 +45,7 @@ const CurrencyInputBlock = ({
                 <button
                     type="button"
                     onClick={() => setOpen(!open)}
-                    className="flex items-center space-x-2 px-3 py-2 bg-gray-50 rounded-full border hover:bg-gray-100"
+                    className="flex-shrink-0 flex items-center space-x-2 px-3 py-2 bg-gray-50 rounded-full border hover:bg-gray-100"
                 >
                     <span className="text-lg">{currency.icon}</span>
                     <span className="font-medium">{currency.code || currency.symbol}</span>
@@ -54,6 +54,7 @@ const CurrencyInputBlock = ({
                     </svg>
                 </button>
             </div>
+
 
             {/* Dropdown */}
             {open && (

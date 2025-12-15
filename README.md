@@ -33,7 +33,7 @@ HTML example:
 
 ```html
 <div id="crypto-checkout"></div>
-<script src="/checkout-widget.js"></script>
+<script src="https://crypto-checkout-widget-beta.vercel.app/checkout-widget.js"></script>
 ```
 
 The script will create a full-viewport iframe inside the `#crypto-checkout` element by default. You can modify `public/checkout-widget.js` to change the iframe `src` or adjust styling to fit your layout.

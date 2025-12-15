@@ -17,16 +17,6 @@ const Page = () => {
     const [receiveWallet, setReceiveWallet] = useState<WalletType | any>();
     const [formStep, setFormStep] = useState(1);
 
-    // Auto-send height to parent
-    // useEffect(() => {
-    //     const sendHeight = () => {
-    //         const height = document.body.scrollHeight;
-    //         window.parent.postMessage({ type: 'resize', height }, '*');
-    //     };
-    //     sendHeight();
-    //     window.addEventListener('resize', sendHeight);
-    // }, []);
-
     const renderTabContent = () => {
         switch (activeTab) {
             case 'crypto-to-cash':
