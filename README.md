@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Crypto Checkout Widget
 
-First, run the development server:
+A small, embeddable crypto checkout widget built with Next.js. This repository contains the widget host application (for demo and development) and a tiny client script you can drop into any site to embed the widget via an iframe.
+
+## Features
+
+- Lightweight embed script served from `public/checkout-widget.js`.
+- Responsive iframe with rounded corners.
+- Demo/host built with Next.js (app directory).
+
+## Quick Start
+
+1. Install dependencies and run the app locally:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Build for production:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Embedding the Widget
 
-## Learn More
+Include the script and add a container element where you want the widget to appear. The provided `public/checkout-widget.js` will inject an iframe pointing to the hosted checkout page.
 
-To learn more about Next.js, take a look at the following resources:
+HTML example:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```html
+<div id="crypto-checkout"></div>
+<script src="/checkout-widget.js"></script>
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The script will create a full-viewport iframe inside the `#crypto-checkout` element by default. You can modify `public/checkout-widget.js` to change the iframe `src` or adjust styling to fit your layout.
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `public/checkout-widget.js` — client embed script that injects the iframe.
+- `src/app` — Next.js app (Pages/routes and global styles).
+- `src/components/checkout` — UI components used by the checkout pages.
+- `src/data` and `src/types` — sample data and TypeScript types.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Development Notes
+
+- The demo uses Next.js (app router). Edit components under `src/components/checkout` and the checkout page under `src/app/checkout/page.tsx`.
+- To change the widget endpoint, update the `iframe.src` value in `public/checkout-widget.js`.
+
+## Contributing
+
+Contributions and improvements are welcome. Open an issue or PR with a clear description of changes.
+
+## License
+
+MIT — feel free to use and adapt the widget for your projects.
+
+## Contact
+
+Questions or feature requests — open an issue in this repo.
