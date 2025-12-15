@@ -5,7 +5,7 @@ import CheckoutHeader from '@/components/checkout/Header';
 import { cryptoAssets, fiatCurrencies } from '@/data/checkoutData';
 import { CurrencyType } from '@/types/currency';
 import { WalletType } from '@/types/wallet';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const Page = () => {
     const [activeTab, setActiveTab] = useState<'crypto-to-cash' | 'cash-to-crypto' | 'crypto-to-fiat-loan'>('crypto-to-cash');
