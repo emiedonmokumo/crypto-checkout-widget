@@ -13,8 +13,8 @@ const Page = () => {
     const [receiveAmount, setReceiveAmount] = useState(0);
     const [payCurrency, setPayCurrency] = useState<CurrencyType>(cryptoAssets[0]);
     const [receiveCurrency, setReceiveCurrency] = useState<CurrencyType>(fiatCurrencies[0]);
-    const [payWallet, setPayWallet] = useState<WalletType | undefined>();
-    const [receiveWallet, setReceiveWallet] = useState<WalletType | undefined>();
+    const [payWallet, setPayWallet] = useState<WalletType | any>();
+    const [receiveWallet, setReceiveWallet] = useState<WalletType | any>();
     const [formStep, setFormStep] = useState(1);
 
     const renderTabContent = () => {
