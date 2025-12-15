@@ -4,12 +4,12 @@ import { useState } from "react";
 
 const WalletSelector = ({ label, wallet, onWalletChange }: {
     label: string;
-    wallet: WalletType;
+    wallet?: WalletType;
     onWalletChange: (wallet: WalletType) => void;
 }) => {
   const [open, setOpen] = useState(false);
 
-  const selectedWallet = wallets.find((w: WalletType) => w.name === wallet.name);
+  const selectedWallet = wallet ? wallets.find((w: WalletType) => w.id === wallet.id): undefined;
 
   return (
     <div className="mt-6 text-sm">
