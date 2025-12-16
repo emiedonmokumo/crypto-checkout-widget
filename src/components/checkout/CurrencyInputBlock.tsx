@@ -52,12 +52,12 @@ const CurrencyInputBlock = ({
                 <button
                     type="button"
                     onClick={() => setOpen(!open)}
-                    className="shrink-0 flex items-center space-x-2 px-3 py-2 bg-gray-50 rounded-full border hover:bg-gray-100"
+                    className="shrink-0 flex items-center space-x-2 px-3 py-2 bg-gray-50 rounded-full border border-gray-300 hover:bg-gray-100"
                 >
                     <img
                         src={currency.icon}
                         alt={currency.name}
-                        className="w-5 h-5 object-contain"
+                        className="w-5 h-5 object-cover rounded-full"
                     />
                     <span className="font-medium">{currency.code || currency.symbol}</span>
                     <svg className="w-4 h-4 text-gray-500" viewBox="0 0 24 24">
@@ -69,7 +69,7 @@ const CurrencyInputBlock = ({
 
             {/* Dropdown */}
             {open && (
-                <div className="absolute right-0 top-auto mt-0.5 w-64 bg-white rounded-xl shadow-lg border z-10 p-1">
+                <div className="absolute right-0 top-auto mt-0.5 w-64 bg-white rounded-xl shadow-lg border border-gray-300 z-10 p-1">
                     {currencies.map((item: CurrencyType) => (
                         <button
                             key={item.id || item.code}

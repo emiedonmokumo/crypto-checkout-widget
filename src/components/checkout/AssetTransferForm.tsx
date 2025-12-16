@@ -29,7 +29,7 @@ const AssetTransferForm = ({
     };
 
     return (
-        <div className="p-5">
+        <div className="">
             <div className="">
                 {/* Header */}
                 <FormHeader text="Send ETH to the address below" onClick={() => setFormStep(1)} />
@@ -38,7 +38,7 @@ const AssetTransferForm = ({
                 <div className="pt-2 pb-8 text-center">
                     <div className="inline-flex items-center bg-green-50/20 text-green-700 py-2 px-4 rounded-full font-medium text-sm border border-green-200">
                         <span className="truncate">{depositAddress}</span>
-                        <button className="ml-3 hover:text-green-800 focus:outline-none">
+                        <button className="ml-3 hover:text-green-800 focus:outline-none cursor-pointer">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-4 w-4"
@@ -59,7 +59,7 @@ const AssetTransferForm = ({
                         <span className="text-gray-500">Amount to send</span>
                         <div className="flex items-center font-medium text-gray-800">
                             <span>{amountToSend}</span>
-                            <button className="ml-3 text-gray-400 hover:text-gray-600 focus:outline-none">
+                            <button className="ml-3 text-gray-400 hover:text-gray-600 focus:outline-none cursor-pointer">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     className="h-4 w-4"

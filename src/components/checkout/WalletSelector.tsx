@@ -51,7 +51,7 @@ const WalletSelector = ({ label, wallet, onWalletChange }: {
         </button>
 
         {open && (
-          <div className="absolute left-0 top-full mt-0.5 w-full bg-white border rounded-xl shadow-lg z-10 p-1">
+          <div className="absolute left-0 top-full mt-0.5 w-full bg-white border border-gray-300 rounded-xl shadow-lg z-10 p-1">
             {wallets.map((item: WalletType) => (
               <button
                 key={item.id}
