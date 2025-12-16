@@ -59,8 +59,8 @@ const Page = () => {
     };
 
     return (
-        <main className="w-fullmin-h-[100dvh] flex items-center justify-center p-4 max-sm:p-0 m-0">
-            <div className="w-full max-w-md p-5 max-sm:p-2 border border-gray-300 rounded-2xl shadow-lg bg-white mx-auto">
+        <main className="w-full min-h-screen flex items-center justify-center p-4 max-sm:p-2 m-0">
+            <div className="w-full max-w-md min-h-dvh sm:min-h-auto p-5 max-sm:p-0 max-sm:border-none max-sm:shadow-none border border-gray-300 rounded-lg sm:rounded-2xl shadow-lg bg-white mx-auto flex flex-col">
                 {formStep == 1 && <CheckoutHeader activeTab={activeTab} onChange={setActiveTab} />}
                 <div className="mt-4">{renderTabContent()}</div>
             </div>
