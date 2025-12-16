@@ -1,10 +1,19 @@
+import { WalletType } from "@/types/wallet";
 import Button from "./Button";
 import FormHeader from "./FormHeader";
 
 const AssetTransferForm = ({
     setFormStep,
+    setPayAmount,
+    setReceiveAmount,
+    setPayWallet,
+    setReceiveWallet
 }: {
     setFormStep: (step: number) => void;
+    setPayAmount: (amount: number) => void;
+    setReceiveAmount: (amount: number) => void;
+    setPayWallet: (wallet: WalletType | undefined) => void;
+    setReceiveWallet: (wallet: WalletType | undefined) => void;
 }) => {
     const depositAddress = '4LiV4YjbxsL6739MKghUd';
     const amountToSend = '100 ETH';
@@ -12,6 +21,10 @@ const AssetTransferForm = ({
     const wallet = 'Other';
 
     const handleSentClick = () => {
+        setPayAmount(0);
+        setReceiveAmount(0);
+        setPayWallet(undefined);
+        setReceiveWallet(undefined);
         setFormStep(5);
     };
 

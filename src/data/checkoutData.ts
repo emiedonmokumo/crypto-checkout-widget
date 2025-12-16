@@ -13,17 +13,22 @@ export const wallets = [
     {
         id: 1,
         name: "MetaMask",
-        icon: "🦊",
+        icon: "/icons/wallet/metamask.png",
     },
     {
         id: 2,
         name: "Rainbow",
-        icon: "🌈",
+        icon: "/icons/wallet/rainbow.png",
     },
     {
         id: 3,
+        name: "WalletConnect",
+        icon: "/icons/wallet/walletConnect.png",
+    },
+    {
+        id: 4,
         name: "Other Crypto Wallets (Binance, Conibase, Bybit etc)",
-        icon: "💼",
+        icon: "/icons/wallet/wallet.png",
     }
 ]
 export const cryptoAssets = [
@@ -31,25 +36,25 @@ export const cryptoAssets = [
     id: "eth",
     symbol: "ETH",
     name: "Ethereum",
-    icon: "✦",
+    icon: "/icons/crypto-asset/ETH.png",
   },
   {
     id: "usdt-celo",
     symbol: "USDT",
     name: "USDT-CELO",
-    icon: "🟡",
+    icon: "/icons/crypto-asset/USDT-CELO.png",
   },
   {
     id: "usdt-ton",
     symbol: "USDT",
     name: "USDT-TON",
-    icon: "🔵",
+    icon: "/icons/crypto-asset/USDT-TON.png",
   },
   {
     id: "usdt-bnb",
     symbol: "USDT",
     name: "USDT-BNB",
-    icon: "🟠",
+    icon: "/icons/crypto-asset/USDT-BNB.png",
   },
 ];
 
@@ -57,11 +62,11 @@ export const fiatCurrencies = [
   {
     code: "NGN",
     name: "Nigerian Naira",
-    icon: "🇳🇬",
+    icon: "/icons/fiat-currency/NGN.png",
   },
-  {
-    code: "USD",
-    name: "US Dollar",
-    icon: "🇺🇸",
-  },
+  // {
+  //   code: "USD",
+  //   name: "US Dollar",
+  //   icon: "🇺🇸",
+  // },
 ];

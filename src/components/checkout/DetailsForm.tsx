@@ -1,13 +1,16 @@
-import React from 'react'
 import { NumericFormat } from 'react-number-format'
 import Button from './Button'
 import FormHeader from './FormHeader'
+import { useState } from 'react';
 
 const DetailsForm = ({
     setFormStep,
 }: {
     setFormStep: (step: number) => void;
 }) => {
+    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
+
     return (
         <div className="p-5">
             <FormHeader 
@@ -17,7 +20,7 @@ const DetailsForm = ({
 
             <div className="space-y-2">
                 <label htmlFor="" className='block text-sm font-medium text-gray-700'>Recipient email</label>
-                <input type="email" className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-full shadow-sm placeholder-gray-400 focus:outline-none focus-within:ring-0.5 focus-within:ring-teal-500 focus-within:border-teal-500 sm:text-sm" placeholder="Enter recipient email" />
+                <input type="email" value={email} onChange={(e)=> setEmail(e.target.value)} className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-full shadow-sm placeholder-gray-400 focus:outline-none focus-within:ring-0.5 focus-within:ring-teal-500 focus-within:border-teal-500 sm:text-sm" placeholder="Enter recipient email" />
             </div>
 
             <div className="my-6 mb-12 space-y-2">
@@ -41,12 +44,16 @@ const DetailsForm = ({
                         decimalSeparator=""
                         allowLeadingZeros
                         valueIsNumericString
+                        value={phone}
+                        onValueChange={(values) => setPhone(values.value)}
                         required
                     />
                 </div>
             </div>
 
-            <Button onClick={() => setFormStep(4)} text='Next' />
+            <Button onClick={() => setFormStep(4)} text='Next'
+                disabled={phone.length < 10 || email.length === 0}
+            />
         </div>
     )
 }

@@ -22,7 +22,7 @@ export default function CheckoutHeader({
           <button
             key={tab.key}
             onClick={() => onChange(tab.key)}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition cursor-pointer
+            className={`px-4 py-2 rounded-full text-sm max-sm:text-xs font-medium transition cursor-pointer
               ${
                 activeTab === tab.key
                   ? 'bg-teal-900 text-white'

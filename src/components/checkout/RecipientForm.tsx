@@ -11,7 +11,7 @@ const RecipientForm = ({
 }) => {
     const [bank, setBank] = useState('');
     const [accountNumber, setAccountNumber] = useState('');
-    const [accountName, setAccountName] = useState('ODUTUGA GBEKE');
+    const [accountName, setAccountName] = useState('John Doe');
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -84,6 +84,7 @@ const RecipientForm = ({
                     <Button
                         text="Next"
                         onClick={()=> setStep(3)}
+                        disabled={!(bank && accountNumber.length === 10)}
                     />
                 </div>
             </form>

@@ -40,7 +40,7 @@ const ComingSoonComponent = ({ tab }: { tab: string }) => {
 
                     <button
                         type="submit"
-                        className="w-full flex justify-center font-instrument font-semibold py-3 px-4 border border-transparent rounded-full shadow-sm text-sm text-white bg-teal-800 hover:bg-teal-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition duration-150 ease-in-out"
+                        className="w-full flex justify-center font-instrument font-semibold py-3 px-4 border border-transparent rounded-full shadow-sm text-sm text-white cursor-pointer bg-teal-800 hover:bg-teal-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition duration-150 ease-in-out"
                     >
                         Update me
                     </button>

@@ -8,21 +8,7 @@ import TransferProcessingCard from './TransferProcessingCard';
 import { CurrencyType } from '@/types/currency';
 import { WalletType } from '@/types/wallet';
 
-const CryptoToCashForm = ({
-  formStep, setFormStep,
-  payAmount,
-  setPayAmount,
-  receiveAmount,
-  setReceiveAmount,
-  payCurrency,
-  setPayCurrency,
-  receiveCurrency,
-  setReceiveCurrency,
-  payWallet,
-  setPayWallet,
-  receiveWallet,
-  setReceiveWallet,
-}: {
+interface CryptoToCashFormProps {
   formStep: number;
   setFormStep: (step: number) => void;
   payAmount: number;
@@ -37,19 +23,46 @@ const CryptoToCashForm = ({
   setPayWallet: (wallet: WalletType | undefined) => void;
   receiveWallet: WalletType | any;
   setReceiveWallet: (wallet: WalletType | undefined) => void;
-}) => {
+}
+
+const CryptoToCashForm = ({
+  formStep, setFormStep,
+  payAmount,
+  setPayAmount,
+  receiveAmount,
+  setReceiveAmount,
+  payCurrency,
+  setPayCurrency,
+  receiveCurrency,
+  setReceiveCurrency,
+  payWallet,
+  setPayWallet,
+  receiveWallet,
+  setReceiveWallet,
+}: CryptoToCashFormProps) => {
+
   if (formStep == 2) {
     return <RecipientForm setStep={setFormStep} />
   } else if (formStep == 3) {
     return <DetailsForm setFormStep={setFormStep} />
   } else if (formStep == 4) {
-    return <AssetTransferForm setFormStep={setFormStep} />
+    return <AssetTransferForm
+      setFormStep={setFormStep}
+      setPayAmount={setPayAmount}
+      setReceiveAmount={setReceiveAmount}
+      setPayWallet={setPayWallet}
+      setReceiveWallet={setReceiveWallet}
+    />
   } else if (formStep == 5) {
     return <TransferProcessingCard setFormStep={setFormStep} />;
   }
 
+  const validateForm = () => {
+    return payAmount > 0 && receiveAmount > 0 && payWallet && receiveWallet;
+  }
+
   return (
-    <div className="p-5">
+    <div className="p-5 max-sm:p-3">
       <div className="space-y-4">
 
         {/* You Pay Block (Crypto) */}
@@ -89,6 +102,7 @@ const CryptoToCashForm = ({
         {/* Convert Now Button */}
         <Button
           text="Convert Now"
+          disabled={!validateForm()}
           onClick={() => setFormStep(2)}
         />
       </div>

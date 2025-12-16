@@ -3,13 +3,13 @@ import { WalletType } from "@/types/wallet";
 import { useState } from "react";
 
 const WalletSelector = ({ label, wallet, onWalletChange }: {
-    label: string;
-    wallet?: WalletType;
-    onWalletChange: (wallet: WalletType) => void;
+  label: string;
+  wallet?: WalletType;
+  onWalletChange: (wallet: WalletType) => void;
 }) => {
   const [open, setOpen] = useState(false);
 
-  const selectedWallet = wallet ? wallets.find((w: WalletType) => w.id === wallet.id): undefined;
+  const selectedWallet = wallet ? wallets.find((w: WalletType) => w.id === wallet.id) : undefined;
 
   return (
     <div className="mt-6 text-sm">
@@ -26,13 +26,18 @@ const WalletSelector = ({ label, wallet, onWalletChange }: {
           <span className="flex items-center gap-2">
             {selectedWallet ? (
               <>
-                <span>{selectedWallet.icon}</span>
-                <span className="font-medium">{selectedWallet.name}</span>
+                <img
+                  src={selectedWallet.icon}
+                  alt={selectedWallet.name}
+                  className="w-5 h-5 object-contain"
+                />
+                <span className="font-medium text-left">{selectedWallet.name}</span>
               </>
             ) : (
               <span className="text-gray-400">Select an option</span>
             )}
           </span>
+
 
           <svg
             className="w-5 h-5 text-gray-500"
@@ -57,7 +62,11 @@ const WalletSelector = ({ label, wallet, onWalletChange }: {
                 }}
                 className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 text-left"
               >
-                <span>{item.icon}</span>
+                <img
+                  src={item.icon}
+                  alt={item.name}
+                  className="w-5 h-5 object-contain"
+                />
                 <span className="font-medium">{item.name}</span>
               </button>
             ))}
