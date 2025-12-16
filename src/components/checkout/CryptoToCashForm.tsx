@@ -63,7 +63,7 @@ const CryptoToCashForm = ({
 
   return (
     <div className="p-4 max-sm:p-3">
-      <div className="space-y-4">
+      <div className="space-y-4 max-sm:space-y-6">
 
         {/* You Pay Block (Crypto) */}
         <CurrencyInputBlock
